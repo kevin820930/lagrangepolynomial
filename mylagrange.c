@@ -27,7 +27,7 @@ void lagrange(long double indata[][2],int time){
         finalanser[i]=0;
     }
 
-    printf("initial:\n");
+    printf("initial data:\n");
     for(i=0;i<time;i++){
         for(j=0;j<2;j++){
             printf("%Lf ",indata[i][j]);
@@ -52,8 +52,6 @@ void lagrange(long double indata[][2],int time){
 	    finalanser[i]=finalanser[i]+((anser[j][i]*indata[j][1])/L0[j]);
 	}
     }
-    printf("\n");
-
     printf("f(x)=");
     for(i=0;i<time;i++){
 	printf("%Lfx^%d",finalanser[i],time-i-1);
@@ -61,14 +59,15 @@ void lagrange(long double indata[][2],int time){
 	        printf("+");
 	}
     }
-    printf("\n");
-    for(i=0;i<time;i++){
+    printf("\n\n");
+/*    for(i=0;i<time;i++){
 	for(j=0;j<time;j++){
             ans=ans+finalanser[j]*(pow(indata[i][0],(time-j-1)));
 	}
 	printf("y: %Lf=%Lf\n",indata[i][1],ans);
         ans=0;
     }
+*/
 }
 
 void calculate(long double indata[][2],int time,int havechoice[100],long double anser[100][100],int choicenum){
